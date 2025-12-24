@@ -19,6 +19,7 @@ public class MainPageTest {
         Configuration.timeout = 10000;
     }
 
+
     @Test(dataProvider = "dataProviderMain", dataProviderClass = DataProviderSample.class)
     public void testMainPageElements(String element) {
         Selenide.open(Sources.MAIN_PAGE);
