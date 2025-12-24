@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ConsultantSelenideTests">
+    <test name="MainPageTests">
+        <classes>
+            <class name="tests.MainPageTest"/>
+        </classes>
+    </test>
+    <test name="LawHotdocsTests">
+        <classes>
+            <class name="tests.LawHotdocsPageTest"/>
+        </classes>
+    </test>
+</suite>
