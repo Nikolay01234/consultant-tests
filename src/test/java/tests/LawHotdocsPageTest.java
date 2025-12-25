@@ -13,23 +13,17 @@ import static org.testng.Assert.assertTrue;
 @Listeners(AllureTestNg.class)
 public class LawHotdocsPageTest {
 
-//    @BeforeClass
-//    public void setUp() {
-//        Configuration.browserSize = "1920x1080";
-//        Configuration.timeout = 10000;
-//    }
-//
-//    @Test(dataProvider = "dataProviderLawHotdocs", dataProviderClass = DataProviderSample.class)
-//    public void testLawHotdocsElements(String element) {
-//        Selenide.open(Sources.LAW_HOTDOCS_PAGE);
-//        Selenide.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);");
-//        assertTrue(Selenide.executeJavaScript("return document.body.innerHTML").toString().contains(element),
-//                "Элемент не найден: " + element);
-//    }
-
-    @Test
-    public void testLawHotdocsElements(String element) {
-        System.out.println("testLawHotdocsElements");
+    @BeforeClass
+    public void setUp() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.timeout = 10000;
     }
 
+    @Test(dataProvider = "dataProviderLawHotdocs", dataProviderClass = DataProviderSample.class)
+    public void testLawHotdocsElements(String element) {
+        Selenide.open(Sources.LAW_HOTDOCS_PAGE);
+        Selenide.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);");
+        assertTrue(Selenide.executeJavaScript("return document.body.innerHTML").toString().contains(element),
+                "Элемент не найден: " + element);
+    }
 }

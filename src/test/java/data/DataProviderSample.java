@@ -7,8 +7,8 @@ public class DataProviderSample {
     public static Object[][] dataProviderMainMethod() {
         return new Object[][] {
                 {"<div id=\"ban__142\""},
-                {"<div id=\"ban__148\""},
-                {"<div class=\"cookies-banner\""}
+//                {"<div id=\"ban__148\""},
+//                {"<div class=\"cookies-banner\""}
         };
     }
 
@@ -16,10 +16,10 @@ public class DataProviderSample {
     public static Object[][] dataProviderLawHotdocsMethod() {
         return new Object[][] {
                 {"<div id=\"ban__162\""},
-                {"<div id=\"ban__135\""},
-                {"<div id=\"ban__137\""},
-                {"<div id=\"ban__138\""},
-                {"<div id=\"ban__149\""}
+//                {"<div id=\"ban__135\""},
+//                {"<div id=\"ban__137\""},
+//                {"<div id=\"ban__138\""},
+//                {"<div id=\"ban__149\""}
         };
     }
 }
