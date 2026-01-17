@@ -6,6 +6,7 @@ import config.Sources;
 import data.DataProviderSample;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
@@ -19,10 +20,14 @@ public class LawHotdocsPageTest {
         Configuration.timeout = 10000;
     }
 
-    @Test(dataProvider = "dataProviderLawHotdocs", dataProviderClass = DataProviderSample.class)
-    public void testLawHotdocsElements(String element) {
+    @BeforeMethod
+    public void scrollDown() {
         Selenide.open(Sources.LAW_HOTDOCS_PAGE);
         Selenide.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    @Test(dataProvider = "dataProviderLawHotdocs", dataProviderClass = DataProviderSample.class)
+    public void testLawHotdocsElements(String element) {
         assertTrue(Selenide.executeJavaScript("return document.body.innerHTML").toString().contains(element),
                 "Элемент не найден: " + element);
     }
