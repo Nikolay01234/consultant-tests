@@ -14,26 +14,26 @@ import static org.testng.Assert.assertTrue;
 @Listeners(AllureTestNg.class)
 public class LawHotdocsPageTest {
 
-    @Test
-    public void myTest(){
-        System.out.println("111");
+//    @Test
+//    public void myTest(){
+//        System.out.println("111");
+//    }
+
+    @BeforeClass
+    public void setUp() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.timeout = 10000;
     }
 
-//    @BeforeClass
-//    public void setUp() {
-//        Configuration.browserSize = "1920x1080";
-//        Configuration.timeout = 10000;
-//    }
-//
-//    @BeforeMethod
-//    public void scrollDown() {
-//        Selenide.open(Sources.LAW_HOTDOCS_PAGE);
-//        Selenide.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);");
-//    }
-//
-//    @Test(dataProvider = "dataProviderLawHotdocs", dataProviderClass = DataProviderSample.class)
-//    public void testLawHotdocsElements(String element) {
-//        assertTrue(Selenide.executeJavaScript("return document.body.innerHTML").toString().contains(element),
-//                "Элемент не найден: " + element);
-//    }
+    @BeforeMethod
+    public void scrollDown() {
+        Selenide.open(Sources.LAW_HOTDOCS_PAGE);
+        Selenide.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    @Test(dataProvider = "dataProviderLawHotdocs", dataProviderClass = DataProviderSample.class)
+    public void testLawHotdocsElements(String element) {
+        assertTrue(Selenide.executeJavaScript("return document.body.innerHTML").toString().contains(element),
+                "Элемент не найден: " + element);
+    }
 }
